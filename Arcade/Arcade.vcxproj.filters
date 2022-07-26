@@ -21,16 +21,16 @@
     <ClCompile Include="src\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\game_over.cpp">
+    <ClCompile Include="Snake\states\snake_game_over.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\pause_menu.cpp">
+    <ClCompile Include="Snake\states\snake_pause_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\play_game.cpp">
+    <ClCompile Include="Snake\states\snake_play_game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\start_menu.cpp">
+    <ClCompile Include="Snake\states\snake_start_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Snake\snake.cpp">
@@ -47,16 +47,16 @@
     <ClInclude Include="engine\game_state.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\game_over.hpp">
+    <ClInclude Include="Snake\states\snake_game_over.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\pause_menu.hpp">
+    <ClInclude Include="Snake\states\snake_pause_menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\play_game.hpp">
+    <ClInclude Include="Snake\states\snake_play_game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\start_menu.hpp">
+    <ClInclude Include="Snake\states\snake_start_menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Snake\snake.hpp">

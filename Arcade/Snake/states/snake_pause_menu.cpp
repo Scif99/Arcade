@@ -1,5 +1,5 @@
-#include "pause_menu.hpp"
-#include "play_game.hpp"
+#include "snake_pause_menu.hpp"
+#include "snake_play_game.hpp"
 
 snake::PauseMenu::PauseMenu(std::shared_ptr<Context>& context)
 	: p_context_{ context }

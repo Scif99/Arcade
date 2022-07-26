@@ -1,7 +1,7 @@
 #pragma once
 #include "game_state.hpp"
-#include "play_game.hpp"
-#include "start_menu.hpp"
+#include "snake_play_game.hpp"
+#include "snake_start_menu.hpp"
 
 #include <memory>
 #include "game.hpp"

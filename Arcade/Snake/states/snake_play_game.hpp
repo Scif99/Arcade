@@ -2,7 +2,7 @@
 #include "game_state.hpp"
 #include "snake.hpp"
 #include "game.hpp"
-#include "game_over.hpp"
+#include "snake_game_over.hpp"
 #include <vector>
 #include <cstdlib>
 

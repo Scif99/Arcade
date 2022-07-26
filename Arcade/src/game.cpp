@@ -1,6 +1,7 @@
 #include "game.hpp"
 #include "snake.hpp"
-#include "states/start_menu.hpp"
+#include "states/snake_start_menu.hpp"
+
 
 Game::Game()
 	: p_context_{ std::make_shared<Context>() }
@@ -13,6 +14,7 @@ Game::Game()
 
 //Game loop
 //TODO Implement timing correctly
+
 void Game::run()
 {
 	sf::Clock clock;

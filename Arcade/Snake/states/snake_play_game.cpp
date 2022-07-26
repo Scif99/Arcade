@@ -1,8 +1,8 @@
-#include "play_game.hpp"
+#include "snake_play_game.hpp"
 #include <thread>
 #include <chrono>
 #include <memory>
-#include "pause_menu.hpp"
+#include "snake_pause_menu.hpp"
 #include <algorithm>
 
 

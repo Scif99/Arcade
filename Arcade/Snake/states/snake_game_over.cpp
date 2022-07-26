@@ -1,6 +1,6 @@
-#include "game_over.hpp"
+#include "snake_game_over.hpp"
 #include <memory>
-#include "play_game.hpp"
+#include "snake_play_game.hpp"
 
 #define ITEM_SIZE 2
 

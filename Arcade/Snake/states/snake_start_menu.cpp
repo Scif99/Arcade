@@ -1,5 +1,5 @@
-#include "start_menu.hpp"
-#include "play_game.hpp"
+#include "snake_start_menu.hpp"
+#include "snake_play_game.hpp"
 
 #include <memory>
 #include <SFML/Graphics.hpp>
