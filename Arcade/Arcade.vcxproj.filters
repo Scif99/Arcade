@@ -21,22 +21,34 @@
     <ClCompile Include="src\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\snake_game_over.cpp">
+    <ClCompile Include="Snake\States\snake_game_over.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\snake_pause_menu.cpp">
+    <ClCompile Include="Snake\States\snake_pause_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\snake_play_game.cpp">
+    <ClCompile Include="Snake\States\snake_play_game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Snake\states\snake_start_menu.cpp">
+    <ClCompile Include="Snake\States\snake_start_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Snake\snake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\state_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pong\States\pong_start_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pong\States\pong_play_game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pong\States\paddle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pong\States\ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,22 +59,37 @@
     <ClInclude Include="engine\game_state.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\snake_game_over.hpp">
+    <ClInclude Include="Snake\States\snake_game_over.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\snake_pause_menu.hpp">
+    <ClInclude Include="Snake\States\snake_pause_menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\snake_play_game.hpp">
+    <ClInclude Include="Snake\States\snake_play_game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Snake\states\snake_start_menu.hpp">
+    <ClInclude Include="Snake\States\snake_start_menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Snake\snake.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\state_manager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pong\ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pong\paddle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pong\score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pong\States\pong_start_menu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pong\States\pong_play_game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

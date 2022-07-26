@@ -89,7 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake;$(ProjectDir)Pong</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake;$(ProjectDir)Pong</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake;$(ProjectDir)Pong</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\sfml\include;$(ProjectDir)engine;$(ProjectDir)src;$(ProjectDir)Snake;$(ProjectDir)Pong</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,22 +152,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="engine\state_manager.cpp" />
+    <ClCompile Include="Pong\States\ball.cpp" />
+    <ClCompile Include="Pong\States\paddle.cpp" />
+    <ClCompile Include="Pong\States\pong_play_game.cpp" />
+    <ClCompile Include="Pong\States\pong_start_menu.cpp" />
     <ClCompile Include="Snake\snake.cpp" />
-    <ClCompile Include="Snake\states\snake_game_over.cpp" />
-    <ClCompile Include="Snake\states\snake_pause_menu.cpp" />
-    <ClCompile Include="Snake\states\snake_play_game.cpp" />
-    <ClCompile Include="Snake\states\snake_start_menu.cpp" />
+    <ClCompile Include="Snake\States\snake_game_over.cpp" />
+    <ClCompile Include="Snake\States\snake_pause_menu.cpp" />
+    <ClCompile Include="Snake\States\snake_play_game.cpp" />
+    <ClCompile Include="Snake\States\snake_start_menu.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\game_state.hpp" />
     <ClInclude Include="engine\state_manager.hpp" />
+    <ClInclude Include="Pong\ball.h" />
+    <ClInclude Include="Pong\paddle.h" />
+    <ClInclude Include="Pong\score.h" />
+    <ClInclude Include="Pong\States\pong_play_game.hpp" />
+    <ClInclude Include="Pong\States\pong_start_menu.hpp" />
     <ClInclude Include="Snake\snake.hpp" />
-    <ClInclude Include="Snake\states\snake_game_over.hpp" />
-    <ClInclude Include="Snake\states\snake_pause_menu.hpp" />
-    <ClInclude Include="Snake\states\snake_play_game.hpp" />
-    <ClInclude Include="Snake\states\snake_start_menu.hpp" />
+    <ClInclude Include="Snake\States\snake_game_over.hpp" />
+    <ClInclude Include="Snake\States\snake_pause_menu.hpp" />
+    <ClInclude Include="Snake\States\snake_play_game.hpp" />
+    <ClInclude Include="Snake\States\snake_start_menu.hpp" />
     <ClInclude Include="src\game.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
