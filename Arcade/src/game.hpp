@@ -3,6 +3,7 @@
 #include <memory>
 #include "state_manager.hpp"
 
+
 struct Context
 {
 	std::unique_ptr<engine::StateManager> p_state_man_;
@@ -16,7 +17,7 @@ struct Context
 class Game
 {
 public:
-	Game();
+	Game(char c);
 	~Game() {};
 
 	void run();

@@ -6,12 +6,13 @@
 
 int main()
 {
-    std::cout << "which game would you like to play?\n";
-    int x;
+    std::cout << "Press p for Pong, and s for Snake:\n";
+    char x;
     std::cin >> x;
 
     sf::RenderWindow window(sf::VideoMode(500, 500), "Arcade");
-    Game game;
+    Game game(x);
     game.run();
+
     return 0;
 }
