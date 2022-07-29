@@ -4,6 +4,9 @@
 #include <snake.hpp>
 
 
+//TODO: Read around creational patterns.
+
+
 int main()
 {
     std::cout << "Press p for Pong, and s for Snake:\n";

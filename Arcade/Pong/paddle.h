@@ -1,8 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-struct Paddle : sf::RectangleShape
+class Ball;
+
+class Paddle : sf::Drawable
 {
+public:
 	enum class Side 
 	{
 		LEFT,
@@ -13,10 +16,12 @@ struct Paddle : sf::RectangleShape
 
 	void HandleInput(const std::unique_ptr<sf::RenderWindow>& p_window);
 	void Update();
-	void Draw();
-
+	void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
+	friend void HandleCollisions(const Paddle& paddle, Ball& ball);
+private:
+	sf::RectangleShape m_shape_;
 	sf::Vector2f m_dim_{ 20.f,80.f };
-	sf::Vector2f m_velocity_;
+	sf::Vector2f m_velocity_{0.f,0.f};
 	Side m_side_;
 };
 

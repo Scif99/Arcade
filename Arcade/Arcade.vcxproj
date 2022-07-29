@@ -152,8 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="engine\state_manager.cpp" />
-    <ClCompile Include="Pong\States\ball.cpp" />
-    <ClCompile Include="Pong\States\paddle.cpp" />
+    <ClCompile Include="Pong\ball.cpp" />
+    <ClCompile Include="Pong\paddle.cpp" />
     <ClCompile Include="Pong\States\pong_play_game.cpp" />
     <ClCompile Include="Pong\States\pong_start_menu.cpp" />
     <ClCompile Include="Snake\snake.cpp" />
@@ -165,6 +165,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Breakout\paddle.hpp" />
     <ClInclude Include="engine\game_state.hpp" />
     <ClInclude Include="engine\state_manager.hpp" />
     <ClInclude Include="Pong\ball.h" />
@@ -178,6 +179,9 @@
     <ClInclude Include="Snake\States\snake_play_game.hpp" />
     <ClInclude Include="Snake\States\snake_start_menu.hpp" />
     <ClInclude Include="src\game.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

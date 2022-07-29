@@ -16,7 +16,6 @@ struct Piece
 
 	Piece(int x, int y, int x_dir, int y_dir)
 		:m_location_{ x,y }, m_direction_{ x_dir, y_dir } {}
-
 };
 
 

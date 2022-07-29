@@ -45,10 +45,10 @@
     <ClCompile Include="Pong\States\pong_play_game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pong\States\paddle.cpp">
+    <ClCompile Include="Pong\paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pong\States\ball.cpp">
+    <ClCompile Include="Pong\ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,5 +92,11 @@
     <ClInclude Include="Pong\States\pong_play_game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Breakout\paddle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf" />
   </ItemGroup>
 </Project>
