@@ -56,7 +56,7 @@
     <ClInclude Include="src\game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\game_state.hpp">
+    <ClInclude Include="engine\state_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Snake\States\snake_game_over.hpp">

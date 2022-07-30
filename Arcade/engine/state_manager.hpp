@@ -1,7 +1,7 @@
 #pragma once
 #include <stack>
 #include <memory>
-#include "game_state.hpp"
+#include "state_base.hpp"
 
 namespace engine
 {
@@ -12,14 +12,14 @@ namespace engine
 		~StateManager() {};
 
 
-		void AddState(std::unique_ptr<GameState> state, bool replace);
+		void AddState(std::unique_ptr<StateBase> state, bool replace);
 		void RemoveState() { if (!m_state_stack_.empty()) m_state_stack_.pop(); }
 
 
-		const std::unique_ptr<GameState>& CurrentState() const { return m_state_stack_.top(); } //top() is UB if stack is empty...
+		StateBase& CurrentState() const { return *m_state_stack_.top(); } //top() is UB if stack is empty...
 
 	private:
-		std::stack<std::unique_ptr<GameState>> m_state_stack_;
+		std::stack<std::unique_ptr<StateBase>> m_state_stack_; //Needs to be of pointer type for polymorphism
 	};
 }
 /*

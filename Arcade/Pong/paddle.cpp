@@ -13,7 +13,7 @@ Paddle::Paddle(float x, float y, Side side)
 }
 
 
-void Paddle::HandleInput(const std::unique_ptr<sf::RenderWindow>& p_window)
+void Paddle::HandleInput(const sf::RenderWindow& window)
 {
 	//Get correct key codes
 	sf::Keyboard::Key up_key = m_side_ == Paddle::Side::LEFT ? sf::Keyboard::W : sf::Keyboard::Up;
@@ -23,7 +23,7 @@ void Paddle::HandleInput(const std::unique_ptr<sf::RenderWindow>& p_window)
 	{
 		m_velocity_.y = -10.f;
 	}
-	else if (sf::Keyboard::isKeyPressed(down_key) && m_shape_.getPosition().y + m_shape_.getSize().y / 2 < p_window->getSize().y)
+	else if (sf::Keyboard::isKeyPressed(down_key) && m_shape_.getPosition().y + m_shape_.getSize().y / 2 < window.getSize().y)
 	{
 		m_velocity_.y = 10.f;
 	}

@@ -8,12 +8,12 @@
 
 #define GRID_DIM 20
 
-snake::PlayGame::PlayGame(std::shared_ptr<Context>& context)
-    : p_context_{ context }, m_snake_{ 10, 10 }, m_apple_{ rand() % GRID_DIM, rand() % GRID_DIM}, m_tick_rate_{10}
+snake::PlayGame::PlayGame(Context& context)
+    : r_context_{ context }, m_snake_{ 10, 10 }, m_apple_{ rand() % GRID_DIM, rand() % GRID_DIM}, m_tick_rate_{10}
 {
     //Constants
-    int node_size = p_context_->p_window_->getSize().x / GRID_DIM; //size of the node in pixels 
-    p_context_->p_window_->setFramerateLimit(10 + m_snake_.size()); //hack to increase speed
+    int node_size = r_context_.r_window_.getSize().x / GRID_DIM; //size of the node in pixels 
+    r_context_.r_window_.setFramerateLimit(10 + m_snake_.size()); //hack to increase speed
 
     //Fill the grid
     for (int y = 0;y < GRID_DIM;++y)
@@ -32,14 +32,14 @@ snake::PlayGame::PlayGame(std::shared_ptr<Context>& context)
 void snake::PlayGame::HandleEvents()
 {
     sf::Event event;
-    while (p_context_->p_window_->pollEvent(event))
+    while (r_context_.r_window_.pollEvent(event))
     {
 
         if (event.type == sf::Event::KeyPressed)
         {
             if (event.key.code == sf::Keyboard::Escape)
             {
-                p_context_->p_state_man_->AddState(std::make_unique<snake::PauseMenu>(p_context_), false);
+                r_context_.m_state_man_.AddState(std::make_unique<snake::PauseMenu>(r_context_), false);
                 return;
             }
 
@@ -84,7 +84,7 @@ void snake::PlayGame::Update(sf::Time elapsed)
     if (m_snake_.intersect() || std::clamp(front_coords.first, 0, GRID_DIM - 1) != front_coords.first
         || std::clamp(front_coords.second, 0, GRID_DIM - 1) != front_coords.second)
     {
-        p_context_->p_state_man_ ->AddState(std::make_unique<snake::GameOver>(p_context_), true);
+        r_context_.m_state_man_.AddState(std::make_unique<snake::GameOver>(r_context_), true);
         return;
 
     }
@@ -94,7 +94,7 @@ void snake::PlayGame::Update(sf::Time elapsed)
     {
         //++tick_rate;
         m_snake_.add_piece(); //Add a piece to the tail of the snake
-        p_context_->p_window_->setFramerateLimit(10 + m_snake_.size()); //hack to increase speed
+        r_context_.r_window_.setFramerateLimit(10 + m_snake_.size()); //hack to increase speed
         m_apple_.first = rand() % GRID_DIM;
         m_apple_.second = rand() % GRID_DIM; //x,y
         m_grid_[m_apple_.second * GRID_DIM + m_apple_.first].setFillColor(sf::Color::Red);
@@ -108,7 +108,7 @@ void snake::PlayGame::Update(sf::Time elapsed)
 //NOT FINISHED
 void snake::PlayGame::Draw()
 {
-    p_context_->p_window_->clear();
+    r_context_.r_window_.clear();
     for (int y = 0;y < GRID_DIM;++y)
     {
         for (int x = 0;x < GRID_DIM;++x)
@@ -121,18 +121,18 @@ void snake::PlayGame::Draw()
             if (m_snake_.contains(x, y))
             {
                 m_grid_[y * GRID_DIM + x].setFillColor(sf::Color::Green);
-                p_context_->p_window_->draw(m_grid_[y * GRID_DIM + x]);
+                r_context_.r_window_.draw(m_grid_[y * GRID_DIM + x]);
             }
 
             if (x == m_apple_.first && y == m_apple_.second) //Apple is on this node
             {
                 m_grid_[y * GRID_DIM + x].setFillColor(sf::Color::Red);
-                p_context_->p_window_->draw(m_grid_[y * GRID_DIM + x]);
+                r_context_.r_window_.draw(m_grid_[y * GRID_DIM + x]);
             }
             //window.draw(grid[y * grid_dim + x]);
         }
     }
 
-    p_context_->p_window_->display();
+    r_context_.r_window_.display();
 
 }

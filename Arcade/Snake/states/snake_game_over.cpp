@@ -4,8 +4,8 @@
 
 #define ITEM_SIZE 2
 
-snake::GameOver::GameOver(std::shared_ptr<Context>& context)
-	: p_context_{ context }, m_curr_index_{ 0 }
+snake::GameOver::GameOver(Context& context)
+	: r_context_{ context }, m_curr_index_{ 0 }
 {
 	if (!m_font_.loadFromFile("arial.ttf"))
 	{
@@ -15,12 +15,12 @@ snake::GameOver::GameOver(std::shared_ptr<Context>& context)
 	m_items_[0].setFont(m_font_);
 	m_items_[0].setFillColor(sf::Color::White);
 	m_items_[0].setString("Retry");
-	m_items_[0].setPosition(sf::Vector2f(context->p_window_->getSize().x / 2, context->p_window_->getSize().y / (ITEM_SIZE + 1) * 1)); //3 items...
+	m_items_[0].setPosition(sf::Vector2f(r_context_.r_window_.getSize().x / 2, r_context_.r_window_.getSize().y / (ITEM_SIZE + 1) * 1)); //3 items...
 
 	m_items_[1].setFont(m_font_);
 	m_items_[1].setFillColor(sf::Color::White);
 	m_items_[1].setString("Exit");
-	m_items_[1].setPosition(sf::Vector2f(context->p_window_->getSize().x / 2, context->p_window_->getSize().y / (ITEM_SIZE + 1) * 2));
+	m_items_[1].setPosition(sf::Vector2f(r_context_.r_window_.getSize().x / 2, r_context_.r_window_.getSize().y / (ITEM_SIZE + 1) * 2));
 
 	m_items_[m_curr_index_].setFillColor(sf::Color::Red); //Highlight 
 }
@@ -28,7 +28,7 @@ snake::GameOver::GameOver(std::shared_ptr<Context>& context)
 void snake::GameOver::HandleEvents()
 {
 	sf::Event event;
-	while (p_context_->p_window_->pollEvent(event))
+	while (r_context_.r_window_.pollEvent(event))
 	{
 		if (event.type == sf::Event::KeyPressed)
 		{
@@ -53,17 +53,17 @@ void snake::GameOver::HandleEvents()
 				break;
 			case sf::Keyboard::Return:
 				if (m_curr_index_ == 1) {
-					p_context_->p_window_->close();
+					r_context_.r_window_.close();
 				}
 				else if (m_curr_index_ == 0)
 				{
-					p_context_->p_state_man_->AddState(std::make_unique<snake::PlayGame>(p_context_), true);
+					r_context_.m_state_man_.AddState(std::make_unique<snake::PlayGame>(r_context_), true);
 					return; //After switching context, exit loop.
 				}
 				break;
 
 			case sf::Keyboard::Escape:
-				p_context_->p_window_->close();
+				r_context_.r_window_.close();
 			}
 		}
 
@@ -74,10 +74,10 @@ void snake::GameOver::HandleEvents()
 
 void snake::GameOver::Draw()
 {
-	p_context_->p_window_->clear();
+	r_context_.r_window_.clear();
 	for (const auto& item : m_items_)
 	{
-		p_context_->p_window_->draw(item);
+		r_context_.r_window_.draw(item);
 	}
-	p_context_->p_window_->display();
+	r_context_.r_window_.display();
 }

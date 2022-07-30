@@ -3,11 +3,11 @@
 namespace engine
 {
 
-	class GameState
+	class StateBase
 	{
 	public:
-		GameState() {};
-		virtual ~GameState() = default; //Default
+		StateBase() {};
+		virtual ~StateBase() = default; //Default
 		virtual void HandleEvents() = 0;
 		virtual void Update(sf::Time elapsed) = 0;
 		virtual void Draw() = 0;

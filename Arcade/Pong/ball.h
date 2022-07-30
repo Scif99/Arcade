@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "paddle.h"
 
-class Paddle;
 
 class Ball : sf::Drawable
 {

@@ -14,7 +14,7 @@ public:
 
 	Paddle(float x, float y, Side side);
 
-	void HandleInput(const std::unique_ptr<sf::RenderWindow>& p_window);
+	void HandleInput(const sf::RenderWindow& window);
 	void Update();
 	void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
 	friend void HandleCollisions(const Paddle& paddle, Ball& ball);

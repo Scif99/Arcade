@@ -6,23 +6,23 @@
 
 struct Context
 {
-	std::unique_ptr<engine::StateManager> p_state_man_;
-	std::unique_ptr<sf::RenderWindow> p_window_;
+	engine::StateManager m_state_man_;
+	sf::RenderWindow& r_window_;
 
-	Context()
-		: p_window_{ std::make_unique<sf::RenderWindow>() }, p_state_man_{ std::make_unique<engine::StateManager>() } {}
+	Context(sf::RenderWindow& window)
+		:r_window_{ window } {}
 };
 
 
 class Game
 {
 public:
-	Game(char c);
+	Game(char c, sf::RenderWindow& window);
 	~Game() {};
 
 	void run();
 private:
-	std::shared_ptr<Context> p_context_;
+	Context m_context_;
 
 };
 
