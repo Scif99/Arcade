@@ -1,6 +1,7 @@
 #pragma once
 #include <stack>
 #include <memory>
+
 #include "state_base.hpp"
 
 namespace engine
@@ -13,7 +14,7 @@ namespace engine
 
 
 		void AddState(std::unique_ptr<StateBase> state, bool replace);
-		void RemoveState() { if (!m_state_stack_.empty()) m_state_stack_.pop(); }
+		void RemoveState() { if (!m_state_stack_.empty()) m_state_stack_.pop(); } //TODO - handle error
 
 
 		StateBase& CurrentState() const { return *m_state_stack_.top(); } //top() is UB if stack is empty...

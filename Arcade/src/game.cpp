@@ -15,7 +15,7 @@ Game::Game(char c, sf::RenderWindow& window)
 	}
 	else if (c == 'p')
 	{
-		m_context_.r_window_.create(sf::VideoMode(500, 600), "Pong"); //Create a 500 x 500 window
+		m_context_.r_window_.create(sf::VideoMode(800, 500), "Pong"); //Create a 500 x 500 window
 		m_context_.m_state_man_.AddState(std::make_unique<pong::StartMenu>(m_context_), false); //Game always starts in the Start Menu
 	}
 }

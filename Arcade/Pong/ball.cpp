@@ -1,5 +1,5 @@
 #include "ball.h"
-
+#include <iostream>
 Ball::Ball(float x, float y)
 {
     m_shape_.setRadius(10.f);
@@ -56,12 +56,17 @@ void HandleCollisions(const Paddle& paddle, Ball& ball)
 {
     if (ball.m_shape_.getGlobalBounds().intersects(paddle.m_shape_.getGlobalBounds()))
     {
-        ball.velocity.x *= -(1.1f); //X speed increased by fixed amount each hit
+
+        //ball.velocity.x *= -(1.1f); //If we just switch direction of velocity, the ball can get 'stuck' in the paddle. (uncomment this out to see!)
+
+        //Update x velocity
+        ball.velocity.x = (1.1f)*std::abs(ball.velocity.x); //Increase magnitude
+        ball.velocity.x *= paddle.m_side_ == Paddle::Side::LEFT ? 1.f : -1.f; //Now decide direction
+
+
 
         //Ball hits top half of paddle
-        if (ball.m_shape_.getPosition().y > paddle.m_shape_.getPosition().y)
-        {
-            ball.velocity.y = paddle.m_shape_.getPosition().y > ball.m_shape_.getPosition().y ? -5.f : 5.f;
-        }
+        ball.velocity.y = ball.m_shape_.getPosition().y < paddle.m_shape_.getPosition().y ? -5.f : 5.f;
+
     }
 }

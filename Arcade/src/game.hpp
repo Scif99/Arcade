@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <memory>
 #include "state_manager.hpp"
 
+//TODO: Do we even need this context class? 
 
 struct Context
 {
@@ -19,8 +19,8 @@ class Game
 public:
 	Game(char c, sf::RenderWindow& window);
 	~Game() {};
-
 	void run();
+
 private:
 	Context m_context_;
 

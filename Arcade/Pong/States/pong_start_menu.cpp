@@ -18,7 +18,7 @@ pong::StartMenu::StartMenu(Context& context)
 
 	m_items_[0].setFont(m_font_);
 	m_items_[0].setFillColor(sf::Color::White);
-	m_items_[0].setString("Play");
+	m_items_[0].setString("Play vs Computer");
 	m_items_[0].setPosition(sf::Vector2f(context.r_window_.getSize().x / 2, context.r_window_.getSize().y / (ITEM_SIZE + 1) * 1)); //3 items...
 
 	m_items_[1].setFont(m_font_);

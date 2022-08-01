@@ -1,8 +1,7 @@
 #include <SFML/Graphics.hpp>
-#include "game.hpp"
 #include <iostream>
-#include <snake.hpp>
 
+#include "game.hpp"
 
 //TODO: Read around creational patterns.
 
